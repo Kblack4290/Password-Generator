@@ -48,38 +48,66 @@
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var lowerCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var UpperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];
+var numericArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+var specialCharactersArray = [' ', '!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', '"', "'"]
 
-// Write password to the #password input
-function writePassword() {
+function getRandom(characterList) {
+  var i = (Math.floor(Math.random() * characterList.length))
+  return characterList[i]
+}
+function generatePassword() {
   // creat a prompt that  asks user to select between 8 and 128
-var passwordLength = window.prompt(" Choose the length of your password between 8 and 128 chararcters")
+  var passwordLength = window.prompt(" Choose the length of your password between 8 and 128 characters")
 
-if (!passwordLength) {
-  return;
-}
+  if (!passwordLength) {
+    return;
+  }
 
-else if (null) {
-  return;
-}
 
-else if (passwordLength <8 || passwordLength >128) {
-  return;
-}
+  else if (passwordLength < 8 || passwordLength > 128) {
+    alert("Please choose a character length between 8 and 128")
+    return;
+  }
 
   //prompt to choose lower case y/n
-var lowerCase = window.confirm (" Do you want lower case letters?")
+  var lowerCase = window.confirm(" Do you want lower case letters?")
+
   //prompt to choose upper case y/n
-  var upperCase = window.confirm (" Do you want upper case letters?")
+  var upperCase = window.confirm(" Do you want upper case letters?")
+
   //numeric y/n
-  var numeric = window.confirm (" Do you want numeric characters?")
+  var numeric = window.confirm(" Do you want numeric characters?")
   //special characters y/n
-  var upperCase = window.confirm (" Do you want special characters letters?")
+  var specialCharacters = window.confirm(" Do you want special characters letters?")
   // if no character types are selected end function 
+  if (lowerCase === false && upperCase === false && numeric === false && specialCharacters === false) {
+    alert("Please choose at least 1 criteria")
+    return;
+  }
+
+  // for loop 
+  var randomArray = [];
+  for (var i = 0; i < passwordLength; i++) {
+
+    if (lowerCase === true) {
+      randomArray.push(getRandom(lowerCaseArray));
+
+      
+
+    }
+  }
+  console.log(randomArray);
+}
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword(); //define
 
   //pw generated after all selected 
 
   // password should be written on page or displayed as an alert when generated 
- var password = generatePassword(); //define
+
   var passwordText = document.querySelector("#password"); //define
 
   passwordText.value = password;
