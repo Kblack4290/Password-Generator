@@ -49,14 +49,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var lowerCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var UpperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];
+var upperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];
 var numericArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-var specialCharactersArray = [' ', '!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', '"', "'"]
+var specialCharactersArray = ['!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', '"', "'"]
 
 function getRandom(characterList) {
   var i = (Math.floor(Math.random() * characterList.length))
   return characterList[i]
 }
+// adding all characters into 1 array
+var allCharacters = lowerCaseArray.concat(upperCaseArray, numericArray, specialCharactersArray);
+console.log(allCharacters);
+
 function generatePassword() {
   // creat a prompt that  asks user to select between 8 and 128
   var passwordLength = window.prompt(" Choose the length of your password between 8 and 128 characters")
@@ -82,24 +86,23 @@ function generatePassword() {
   //special characters y/n
   var specialCharacters = window.confirm(" Do you want special characters letters?")
   // if no character types are selected end function 
+
   if (lowerCase === false && upperCase === false && numeric === false && specialCharacters === false) {
     alert("Please choose at least 1 criteria")
     return;
   }
-
   // for loop 
   var randomArray = [];
   for (var i = 0; i < passwordLength; i++) {
 
-    if (lowerCase === true) {
-      randomArray.push(getRandom(lowerCaseArray));
-
-      
-
+    // START HERE var allWindows = lowerCase.concat(upperCase, numeric, specialCharacters);????????
+    if (allWindows === true) {
+      randomArray.push(getRandom(allCharacters));
     }
   }
   console.log(randomArray);
 }
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword(); //define
