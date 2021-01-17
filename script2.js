@@ -69,8 +69,8 @@ var passwordText = document.querySelector("#password");
 
 function writePassword() {
 
-    password.splice(0, password.length);
 
+    password.splice(0, password.length);
 
     //Password Length
     passwordLength = prompt("Choose a character length between 8 and 29")
@@ -104,7 +104,7 @@ function writePassword() {
     //selecting upper case option 
     var upperCase = confirm("Would you like uppercase letters?")
 
-    // if upper case letters are selected and 
+    // if upper case letters are selected then they will be combined with the rest of the characters selected 
     if (upperCase) {
         allCharacters = allCharacters.concat(upperCaseLetters)
 
@@ -120,11 +120,12 @@ function writePassword() {
     //selecting special characters 
     var special = confirm("Would you like special characters?")
 
+    // if special characters are selected then they will be combined with the other characters selected 
     if (special) {
         allCharacters = allCharacters.concat(specialCharacters)
 
     }
-
+    // if only special characters are selected
     else if (special) {
         allCharacters = specialCharacters
     };
@@ -149,9 +150,16 @@ function writePassword() {
         return;
     }
 
+
+
+    // var password = generatePassword();
+
+
+    // passwordText.value = password;
+
+    
+
     getRandom();
-
-
 }
 
 //function to get random character
@@ -161,6 +169,7 @@ function getRandom() {
     for (var i = 0; i < passwordLength; i++) {
         var random = Math.floor(Math.random() * allCharacters.length);
         password.push(allCharacters[random]);
+        
     }
 
     passwordText.textContent = password.join("");
