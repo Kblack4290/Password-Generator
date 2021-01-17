@@ -75,16 +75,19 @@ function generatePassword() {
     return;
   }
 
+
   //prompt to choose lower case y/n
-  var lowerCase = window.confirm(" Do you want lower case letters?")
+  var lowerCase = confirm(" Do you want lower case letters?")
 
   //prompt to choose upper case y/n
-  var upperCase = window.confirm(" Do you want upper case letters?")
+  var upperCase = confirm(" Do you want upper case letters?")
 
   //numeric y/n
-  var numeric = window.confirm(" Do you want numeric characters?")
+  var numeric = confirm(" Do you want numeric characters?")
+
   //special characters y/n
-  var specialCharacters = window.confirm(" Do you want special characters letters?")
+  var specialCharacters = confirm(" Do you want special characters letters?")
+
   // if no character types are selected end function 
 
   if (lowerCase === false && upperCase === false && numeric === false && specialCharacters === false) {
@@ -95,8 +98,8 @@ function generatePassword() {
   var randomArray = [];
   for (var i = 0; i < passwordLength; i++) {
 
-    // START HERE var allWindows = lowerCase.concat(upperCase, numeric, specialCharacters);????????
-    if (allWindows === true) {
+
+    if (lowerCase === true) {
       randomArray.push(getRandom(allCharacters));
     }
   }
