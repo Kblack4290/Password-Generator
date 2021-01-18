@@ -71,6 +71,7 @@ function writePassword() {
 
 
     password.splice(0, password.length);
+    allCharacters.splice(0, allCharacters.length);
 
     //Password Length
     passwordLength = prompt("Choose a character length between 8 and 29")
