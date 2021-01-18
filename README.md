@@ -17,4 +17,4 @@ If the user selects and appropriate password length and has selected at least 1 
 
 If the user would like to create another password, then the user can click the button again to start their password criteria over. 
 
-![Window screenshot](/Password-Generator/Password_Generator_Screenshot.png?raw=true "Password Generator")
+![Window screenshot](/Password_Generator_Screenshot.png?raw=true "Password Generator")
