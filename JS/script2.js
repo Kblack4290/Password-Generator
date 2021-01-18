@@ -56,14 +56,10 @@ function writePassword() {
         return;
     }
 
-    else if (passwordLength = lowerCaseLetters.concat(upperCaseLetters)) {
-        alert("Please choose a password length between 8 and 128 characters")
-        return;
-    }
     console.log(passwordLength);
 
     // Selecting lower case option
-    var lowerCase = confirm("Would you like lowercase letters?")
+    var lowerCase = confirm("Would you like lowercase letters? Select Ok to confirm.")
 
     // lower case letters will be added to all characters selected
     if (lowerCase) {
@@ -79,7 +75,7 @@ function writePassword() {
 
 
     //selecting upper case option 
-    var upperCase = confirm("Would you like uppercase letters?")
+    var upperCase = confirm("Would you like uppercase letters? Select Ok to confirm.")
 
     // if upper case letters are selected then they will be combined with the rest of the characters selected 
     if (upperCase) {
@@ -95,7 +91,7 @@ function writePassword() {
 
 
     //selecting special characters 
-    var special = confirm("Would you like special characters?")
+    var special = confirm("Would you like special characters? Select Ok to confirm.")
 
     // if special characters are selected then they will be combined with the other characters selected 
     if (special) {
@@ -108,7 +104,7 @@ function writePassword() {
     };
 
     //selecting numbers option
-    var numeric = confirm("Would you like numbers?")
+    var numeric = confirm("Would you like numbers? Select Ok to confirm.")
 
     // if numbers are selected then they will be added to characters that are selected
     if (numeric) {
