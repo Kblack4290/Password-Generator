@@ -1,32 +1,3 @@
-// ## Acceptance Criteria
-
-// ```
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-
-// WHEN prompted for character types to include in the password
-
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-
-// WHEN I answer each prompt
-
-// THEN my input should be validated and at least one character type should be selected
-
-// WHEN all prompts are answered
-
-// THEN a password is generated that matches the selected criteria
-
-// WHEN the password is generated
-
-// THEN the password is either displayed in an alert or written to the page
-// ```
-
-
 // what do I want to do?
 
 //I want to generate a password that meets the selected criteria
@@ -134,11 +105,12 @@ function writePassword() {
     //selecting numbers option
     var numeric = confirm("Would you like numbers?")
 
+    // if numbers are selected then they will be added to characters that are selected
     if (numeric) {
         allCharacters = allCharacters.concat(numbers)
 
     }
-
+//  only numbers are selected
     else if (numeric) {
 
         allCharacters = numbers
@@ -146,18 +118,17 @@ function writePassword() {
 
     console.log(allCharacters);
 
+    // If no characters are selected then the user will be alerted and sent back to generate a pw
     if (lowerCase === false && upperCase === false && numeric === false && special === false) {
         alert("Please choose at least 1 criteria")
         return;
     }
 
-
+// calling for the the getRandom function to obtain radom array from the characters selected
     getRandom();
 }
 
-//function to get random character
-
-
+//function to get random character/ for loop
 function getRandom() {
     for (var i = 0; i < passwordLength; i++) {
         var random = Math.floor(Math.random() * allCharacters.length);
