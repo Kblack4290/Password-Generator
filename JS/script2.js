@@ -45,14 +45,19 @@ function writePassword() {
     allCharacters.splice(0, allCharacters.length);
 
     //Password Length
-    passwordLength = prompt("Choose a character length between 8 and 128")
+    passwordLength = prompt("Choose a password length between 8 and 128 characters")
 
     if (!passwordLength) {
         return;
     }
 
     else if (passwordLength < 8 || passwordLength > 128) {
-        alert("Please choose a character length between 8 and 128")
+        alert("Please choose a password length between 8 and 128 characters")
+        return;
+    }
+
+    else if (passwordLength = lowerCaseLetters.concat(upperCaseLetters)) {
+        alert("Please choose a password length between 8 and 128 characters")
         return;
     }
     console.log(passwordLength);
