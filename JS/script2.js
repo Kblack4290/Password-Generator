@@ -110,7 +110,7 @@ function writePassword() {
         allCharacters = allCharacters.concat(numbers)
 
     }
-//  only numbers are selected
+    //  only numbers are selected
     else if (numeric) {
 
         allCharacters = numbers
@@ -124,7 +124,7 @@ function writePassword() {
         return;
     }
 
-// calling for the the getRandom function to obtain radom array from the characters selected
+    // calling for the the getRandom function to obtain radom array from the characters selected
     getRandom();
 }
 
