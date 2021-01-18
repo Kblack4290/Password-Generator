@@ -74,7 +74,7 @@ function writePassword() {
     allCharacters.splice(0, allCharacters.length);
 
     //Password Length
-    passwordLength = prompt("Choose a character length between 8 and 29")
+    passwordLength = prompt("Choose a character length between 8 and 128")
 
     if (!passwordLength) {
         return;
@@ -152,14 +152,6 @@ function writePassword() {
     }
 
 
-
-    // var password = generatePassword();
-
-
-    // passwordText.value = password;
-
-    
-
     getRandom();
 }
 
@@ -170,7 +162,7 @@ function getRandom() {
     for (var i = 0; i < passwordLength; i++) {
         var random = Math.floor(Math.random() * allCharacters.length);
         password.push(allCharacters[random]);
-        
+
     }
 
     passwordText.textContent = password.join("");
